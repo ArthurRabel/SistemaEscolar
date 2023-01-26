@@ -1,0 +1,96 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/reset.css}">
+    <title>login</title>
+    <script>
+        function validaForm(form){
+            if(form.nome.value.length > 15 || form.nome.value == "" )
+            {
+                alert("insira o nome corretamente!")
+                return false;
+            }
+
+
+            if(form.sobrenome.value.length > 35 || form.sobrenome.value == "")
+            {
+                alert("insira o sobre-nome coretamente!")
+                return false;
+            }
+
+            let formatEmail =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(!formatEmail.test(form.email.value) || form.email.value == "")
+            {
+                alert("insiria o email corretamente!")
+                return false;
+            }
+
+
+            let formatCpf = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/;
+            if(!formatCpf.test(form.cpf.value)  || form.cpf.value == "")
+            {
+                alert("insira o CPF corretamente!")
+                return false;
+            }
+
+
+           if(isNaN(Number(form.telefone.value)))
+            {
+            alert("insira o número corretamente!")
+            return false;
+            }
+
+
+            if(form.senha.value.length < 6){
+                alert("Insira corretamente a senha");
+                return false;
+            }
+            if(form.senhadnv.value != form.senha.value)
+            {
+                alert("as senhas nao coincidem!")
+                return false;
+            }
+            return true;
+        };
+    </script>
+    <style>
+        form{
+            border: solid 1px black;
+            margin: auto;
+            width: 300px;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        table{
+            margin: auto;
+        }
+        input{
+            border: solid 1px black;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/inscricao/new" name="form" method="post" onsubmit="return validaForm(this);">
+        <label for="POST-nome">nome:</label>
+        <input id="POST-nome" type="text" name="nome">
+        <label for="POST-sobre-nome">sobre-nome:</label>
+        <input id="POST-sobre-nome" type="text" name="sobrenome">
+        <label for="POST-email">email:</label>
+        <input id="POST-email" type="text" name="email">
+        <label for="POST-cpf">cpf:</label>
+        <input id="POST-cpf" type="text" name="cpf">
+        <label for="POST-número">número:</label>
+        <input id="POST-número" type="text" name="telefone">
+        <label for="POST-senha">senha:</label>
+        <input id="POST-senha" type="password" name="senha">
+        <label for="POST-senhadnv">confirme a senha:</label>
+        <input id="POST-senhadnv" type="password" name="senhadnv">
+        <input type="submit" value="Entrar">
+    </form>
+</body>
+</html>

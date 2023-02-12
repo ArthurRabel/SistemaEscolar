@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/reset.css}">
+    <link rel="stylesheet" href="./css/index.css">
     <title>login</title>
     <script>
         function validaForm(form){
@@ -19,30 +19,24 @@
             return true;
         };
     </script>
-    <style>
-        form{
-            border: solid 1px black;
-            margin: auto;
-            width: 200px;
-            border-radius: 5px;
-            padding: 20px;
-        }
-        input{
-            border: solid 1px black;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <form action="/home" onsubmit="return validaForm(this);">
-            <label for="POST-matricula">matricula:</label>
-            <input id="POST-matricula" type="text" name="matricula">
-            <label for="POST-senha">senha:</label>
-            <input id="POST-senha" type="password" name="senha">
-            <input type="submit" value="Entrar">
-            <a href="/inscricao">Não sou matriculado?</a>
-    </form>
+    <div class="container">
+
+        <div id="box1">
+            <h2>hello world</h2>
+            <img src="../images/3500_7_10.jpg" alt="sua mae">
+        </div>
+
+        <div id="box2">
+            <form action="/home" onsubmit="return validaForm(this);">
+                <input id="POST-matricula" type="text" name="matricula" placeholder="Seu nome"><br><br>
+                <input id="POST-senha" type="password" name="senha" placeholder="Sua senha"><br><br>
+                <input type="submit" value="Entrar">
+                <a href="/inscricao">Não sou matriculado?</a>
+            </form>
+        </div>
+
+    </div>
 </body>
 </html>

@@ -1,0 +1,43 @@
+body {background-color: rgb(46, 45, 41); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; transition: 2s;}
+
+#box {text-align: center;}
+h2 { color: white; font-size: 70px; margin-left: 25%;}
+img {width: 35%; display: none;}
+
+form{
+    
+    margin-left: 6%;
+    width: 300px;
+    border-radius: 8%;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -8px 8px rgb(189, 187, 187);
+}
+
+input{
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    padding: 8px;
+    background-color: rgb(202, 202, 202);
+}
+
+@media only screen and (min-width: 480px) {
+    form {margin-bottom: 8%; margin-left: 20%;}
+
+}
+@media only screen and (min-width: 800px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    h2 {margin-left: 2%;}
+    img {display: block; margin-left: -6%; margin-top: -7%; width: 380px }
+
+    form {margin-left: -3%; margin-top: 30%;}
+}
+@media only screen and (min-width: 1000px) {
+    h2 {margin-top:10%}
+    form {margin-left: -15%}
+}

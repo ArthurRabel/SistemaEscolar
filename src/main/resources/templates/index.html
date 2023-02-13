@@ -1,14 +1,15 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>login</title>
-    <script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{css/reset.css}">
+  <link rel="stylesheet" th:href="@{css/index.css}">
+  <title>login</title>
+  <script>
         function validaForm(form){
-            if(form.matricula.value.length != 7){
+            if(form.id.value.length != 7){
                 alert("Insira corretamente a matricula");
                 return false;
             };
@@ -21,22 +22,22 @@
     </script>
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <div id="box1">
-            <h2>hello world</h2>
-            <img src="../images/3500_7_10.jpg" alt="sua mae">
-        </div>
+  <div id="box1">
+    <h2>hello world</h2>
+    <img src="../images/3500_7_10.jpg" alt="sua mae">
+  </div>
 
-        <div id="box2">
-            <form action="/home" onsubmit="return validaForm(this);">
-                <input id="POST-matricula" type="text" name="matricula" placeholder="Seu nome"><br><br>
-                <input id="POST-senha" type="password" name="senha" placeholder="Sua senha"><br><br>
-                <input type="submit" value="Entrar">
-                <a href="/inscricao">Não sou matriculado?</a>
-            </form>
-        </div>
+  <div id="box2">
+    <form action="/index/login" name="form" method="post"  onsubmit="return validaForm(this);">
+      <input id="POST-id" type="text" name="id" placeholder="Sua matricula"><br><br>
+      <input id="POST-senha" type="password" name="senha" placeholder="Sua senha"><br><br>
+      <input type="submit" value="Entrar">
+      <a href="/inscricao">Não sou matriculado?</a>
+    </form>
+  </div>
 
-    </div>
+</div>
 </body>
 </html>

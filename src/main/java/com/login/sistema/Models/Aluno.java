@@ -1,4 +1,4 @@
-package com.AtividadeFinal.SistemaEscolar.Models;
+package com.login.sistema.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,8 +18,10 @@ public class Aluno {
     private String telefone;
     @NotBlank
     private String senha;
+
     public Aluno() { }
-    public Aluno(String nome, String sobrenome, String email, String cpf, String telefone, String senha) {
+    public Aluno(int id, String nome, String sobrenome, String email, String cpf, String telefone, String senha) {
+        this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -87,7 +89,7 @@ public class Aluno {
     @Override
     public String toString() {
         return "Aluno{" +
-                "id=" + id +
+                "matricula=" + id +
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
                 ", email='" + email + '\'' +

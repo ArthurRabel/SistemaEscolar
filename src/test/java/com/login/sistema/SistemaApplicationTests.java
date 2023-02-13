@@ -1,10 +1,10 @@
-package com.AtividadeFinal.SistemaEscolar;
+package com.login.sistema;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SistemaEscolarApplicationTests {
+class SistemaApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,12 +1,13 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/inscricao.css">
-    <title>login</title>
-    <script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{css/reset.css}">
+  <link rel="stylesheet" th:href="@{css/inscricao.css}">
+  <title>login</title>
+  <script>
         function validaForm(form){
             if(form.nome.value.length > 15 || form.nome.value == "" )
             {
@@ -58,35 +59,35 @@
     </script>
 </head>
 <body>
-    <div class="container">
+<div class="container">
 
-        <div class="box">
-            <h2>Inscreva-se!</h2><br>
-    
-            <img src="../images/5300_6_07.png">
-        </div>
-        
-        <div class="box2">
-            <form action="/inscricao/new" name="form" method="post" onsubmit="return validaForm(this);">
-            
-                <input id="POST-nome" type="text" name="nome" placeholder="Nome"><br><br>
-        
-                <input id="POST-sobre-nome" type="text" name="sobrenome" placeholder="sobrenome"><br><br>
-        
-                <input id="POST-email" type="text" name="email" placeholder="email"><br><br>
-        
-                <input id="POST-cpf" type="text" name="cpf" placeholder="cpf"><br><br>
-        
-                <input id="POST-número" type="text" name="telefone" placeholder="Telefone"><br><br>
-        
-                <input id="POST-senha" type="password" name="senha" placeholder="Senha"><br><br>
-        
-                <input id="POST-senhadnv" type="password" name="senhadnv" placeholder="Conferir senha"><br><br>
-        
-                <input type="submit" value="Entrar">
-            </form>
-        </div>
+  <div class="box">
+    <h2>Inscreva-se!</h2><br>
 
-    </div>
+    <img src="../images/5300_6_07.png">
+  </div>
+
+  <div class="box2">
+    <form action="/inscricao/new" name="form" method="post" onsubmit="return validaForm(this);">
+
+      <input id="POST-nome" type="text" name="nome" placeholder="Nome"><br><br>
+
+      <input id="POST-sobre-nome" type="text" name="sobrenome" placeholder="sobrenome"><br><br>
+
+      <input id="POST-email" type="text" name="email" placeholder="email"><br><br>
+
+      <input id="POST-cpf" type="text" name="cpf" placeholder="cpf"><br><br>
+
+      <input id="POST-número" type="text" name="telefone" placeholder="Telefone"><br><br>
+
+      <input id="POST-senha" type="password" name="senha" placeholder="Senha"><br><br>
+
+      <input id="POST-senhadnv" type="password" name="senhadnv" placeholder="Conferir senha"><br><br>
+
+      <input type="submit" value="Entrar">
+    </form>
+  </div>
+
+</div>
 </body>
 </html>

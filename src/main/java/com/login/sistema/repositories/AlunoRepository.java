@@ -1,6 +1,6 @@
-package com.AtividadeFinal.SistemaEscolar.repositories;
+package com.login.sistema.repositories;
 
-import com.AtividadeFinal.SistemaEscolar.Models.Aluno;
+import com.login.sistema.Models.Aluno;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" th:href="@{css/reset.css}">
+    <link rel="stylesheet" th:href="@{css/home.css}">
     <title>Home</title>
 </head>
 <body>
 
-  <header>
+<header>
     <nav>
         <ul>
             <li>
@@ -24,37 +25,37 @@
         </ul>
         <img src="trabalho duro.jpg" alt="">
     </nav>
-  </header>
+</header>
 
-  <main>
-      <table>
+<main>
+    <table>
         <tr>
             <td>
-                <p>id<span></span></p>
+                <p th:each="aluno : ${aluno}">Matricula: <span th:text="${aluno.get().getId()}"></span></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>nome:<span></span></p>
+                <p th:each="aluno : ${aluno}">nome: <span th:text="${aluno.get().getNome()}"></span></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>email:<span></span></p>
+                <p th:each="aluno : ${aluno}">email: <span th:text="${aluno.get().getEmail()}"></span></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>cpf:<span></span></p>
+                <p th:each="aluno : ${aluno}">cpf: <span th:text="${aluno.get().getCpf()}"></span></p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>telefone<span></span></p>
+                <p th:each="aluno : ${aluno}">telefone: <span th:text="${aluno.get().getTelefone()}"></span></p>
             </td>
         </tr>
-      </table>
-  </main>
+    </table>
+</main>
 
 </body>
 </html>

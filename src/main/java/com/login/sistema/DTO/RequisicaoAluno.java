@@ -1,33 +1,25 @@
-package com.login.sistema.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package com.login.sistema.DTO;
+
+import com.login.sistema.Models.Aluno;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigInteger;
 
-@Entity
-public class Aluno {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class RequisicaoAluno {
+    @NotBlank
     private String nome;
+    @NotBlank
     private String sobrenome;
+    @NotBlank
     private String email;
+    @NotNull
     private BigInteger cpf;
+    @NotNull
     private BigInteger telefone;
+    @NotBlank
     private String senha;
-
-    public Aluno() { }
-    public Aluno( String nome, String sobrenome, String email, BigInteger cpf, BigInteger telefone, String senha) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.email = email;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.senha = senha;
-    }
 
     public String getSenha() {
         return senha;
@@ -77,18 +69,21 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
-    }
+    public Aluno toALuno() {
+        Aluno aluno = new Aluno();
+        aluno.setNome(this.nome);
+        aluno.setSobrenome(this.sobrenome);
+        aluno.setEmail(this.email);
+        aluno.setCpf(this.cpf);
+        aluno.setTelefone(this.telefone);
+        aluno.setSenha(this.senha);
 
-    public void setId(int id) {
-        this.id = id;
+        return aluno;
     }
 
     @Override
     public String toString() {
         return "Aluno{" +
-                "matricula=" + id +
                 "nome='" + nome + " " + nome.getClass().getSimpleName() +'\'' +
                 ", sobrenome='" + sobrenome + " " + sobrenome.getClass().getSimpleName() + '\'' +
                 ", email='" + email + " " + email.getClass().getSimpleName() +'\'' +

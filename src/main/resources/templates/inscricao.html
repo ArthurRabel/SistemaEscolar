@@ -9,37 +9,30 @@
   <title>login</title>
   <script>
         function validaForm(form){
-            if(form.nome.value.length > 15 || form.nome.value == "" )
-            {
+            if(form.nome.value.length > 15 || form.nome.value == "" ){
                 alert("insira o nome corretamente!")
                 return false;
             }
 
 
-            if(form.sobrenome.value.length > 35 || form.sobrenome.value == "")
-            {
+            if(form.sobrenome.value.length > 35 || form.sobrenome.value == ""){
                 alert("insira o sobre-nome coretamente!")
                 return false;
             }
 
             let formatEmail =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            if(!formatEmail.test(form.email.value) || form.email.value == "")
-            {
+            if(!formatEmail.test(form.email.value) || form.email.value == ""){
                 alert("insiria o email corretamente!")
                 return false;
             }
 
-
-            let formatCpf = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/;
-            if(!formatCpf.test(form.cpf.value)  || form.cpf.value == "")
-            {
+            if(isNaN(Number(form.cpf.value)) || form.cpf.value == ""){
                 alert("insira o CPF corretamente!")
                 return false;
             }
 
 
-           if(isNaN(Number(form.telefone.value)))
-            {
+           if(isNaN(Number(form.telefone.value))  || form.cpf.value == ""){
             alert("insira o número corretamente!")
             return false;
             }
@@ -49,8 +42,7 @@
                 alert("Insira corretamente a senha");
                 return false;
             }
-            if(form.senhadnv.value != form.senha.value)
-            {
+            if(form.senhadnv.value != form.senha.value){
                 alert("as senhas nao coincidem!")
                 return false;
             }
@@ -70,19 +62,19 @@
   <div class="box2">
     <form action="/inscricao/new" name="form" method="post" onsubmit="return validaForm(this);">
 
-      <input id="POST-nome" type="text" name="nome" placeholder="Nome"><br><br>
+      <input id="POST-nome" type="text" name="nome" placeholder="Nome" required><br><br>
 
-      <input id="POST-sobre-nome" type="text" name="sobrenome" placeholder="sobrenome"><br><br>
+      <input id="POST-sobre-nome" type="text" name="sobrenome" placeholder="sobrenome" required><br><br>
 
-      <input id="POST-email" type="text" name="email" placeholder="email"><br><br>
+      <input id="POST-email" type="text" name="email" placeholder="email" required><br><br>
 
-      <input id="POST-cpf" type="text" name="cpf" placeholder="cpf"><br><br>
+      <input id="POST-cpf" type="number" name="cpf" placeholder="cpf" required><br><br>
 
-      <input id="POST-número" type="text" name="telefone" placeholder="Telefone"><br><br>
+      <input id="POST-número" type="number" name="telefone" placeholder="Telefone" required><br><br>
 
-      <input id="POST-senha" type="password" name="senha" placeholder="Senha"><br><br>
+      <input id="POST-senha" type="password" name="senha" placeholder="Senha" required><br><br>
 
-      <input id="POST-senhadnv" type="password" name="senhadnv" placeholder="Conferir senha"><br><br>
+      <input id="POST-senhadnv" type="password" name="senhadnv" placeholder="Conferir senha" required><br><br>
 
       <input type="submit" value="Entrar">
     </form>

@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td>
-                <p th:each="aluno : ${aluno}">nome: <span th:text="${aluno.get().getNome()}"></span></p>
+                <p th:each="aluno : ${aluno}">nome: <span th:text="${aluno.get().getNome()}"></span> <span th:text="${aluno.get().getSobrenome()}"></span></p>
             </td>
         </tr>
         <tr>
